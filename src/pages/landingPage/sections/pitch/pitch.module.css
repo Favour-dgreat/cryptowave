@@ -1,0 +1,255 @@
+.pitch_container {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  margin-top: 2rem;
+  margin: 0 auto;
+  width: 100%;
+}
+.cryptoInfo {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  color: #000;
+  font-family: Arial, sans-serif;
+}
+
+.cryptoItem {
+  text-align: center;
+}
+
+.cryptoName {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.cryptoValue {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.cryptoChange {
+  font-size: 1.2em;
+}
+
+.negative {
+  color: #006400; /* Green */
+}
+
+.positive {
+  color: #ff0000; /* Red */
+}
+
+.cryptoChange.positive {
+  color: #ff0000; /* Red */
+}
+.pitch_header {
+  font-family: var(--font);
+  color: #000;
+  font-weight: 300;
+  text-align: center;
+  line-height: normal;
+}
+.see{
+  color: #007BFF;
+  cursor: pointer;
+}
+
+.showcase_button{
+background-color: inherit;
+border: 1px solid #000;
+color: #000;
+border-radius: 10px;
+font-size: 12px;
+font-weight: 100;
+}
+
+.pitchImage {
+  width: 100%;
+}
+
+.text_div {
+  display: block;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5%;
+}
+.heading3 {
+  color: var(--grey);
+  line-height: 10px;
+  /* text-align: center; */
+}
+.paragraph {
+  width: 100%;
+  font-family: 'Roboto';
+  font-size: 15px;
+  line-height: 28px; 
+  text-align: center;
+}
+.button {
+  background-color: var(--darkblue);
+  color: white;
+  border-radius: 25px;
+  padding-inline: 24px;
+  padding-block: 19px;
+  font-size: clamp(14px, 1vw, 16px);
+  outline: none;
+  border: none;
+  align-self: self-start;
+}
+.button:hover {
+  background: var(--black);
+}
+.pitchImage {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.regularButton {
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 1024px) {
+  .content_div {
+    background: #f0f1f7;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .content_div1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+
+.pitch_inner {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.pitch_inner1 {
+  width: 80%;
+  margin: 0 auto;
+
+}
+}
+
+@media screen and (max-width: 1000px) {
+  .pitch_inner {
+    width: 90%;
+  }
+  .pitch_inner1 {
+    width: 90%;
+  }
+  .paragraph {
+    font-size: 1rem;
+  }
+  .pitch_container {
+    margin-top: 2rem;
+  }
+}
+@media screen and (max-width: 950px) {
+  .pitch_inner {
+    width: 100%;
+  }
+  .pitch_inner1 {
+    width: 100%;
+  }
+  .content_div {
+    margin-top: 2rem;
+    flex-direction: column;
+    width: 95%;
+    gap: 20px;
+  }
+  .content_div1 {
+    margin-top: 2rem;
+    flex-direction: column;
+    width: 95%;
+    gap: 20px;
+  }
+  .see{
+    color: #007BFF;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  .img_div {
+    width: 70%;
+  }
+  .text_div {
+    width: 100%;
+    padding: 2%;
+    margin-top: -40%;
+    font-weight: 100px;
+    text-align: left;
+  }
+  .pitch_container {
+    margin-top: 5rem;
+  }
+  .paragraph {
+    width: 100%;
+    font-family: 'Roboto';
+    font-size: 12px;
+    text-align: left;
+  }
+ 
+}
+@media screen and (max-width: 500px) {
+  .pitchImage{
+    justify-content: center;
+    text-align: center;
+    margin-top: -25%;
+  }
+  .content_div {
+    background: #f0f1f7;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 20px;
+    width: 100%;
+  }
+  .content_div {
+    margin-top: 2rem;
+    gap: 20px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .content_div1 {
+    margin-top: 2rem;
+    gap: 20px;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .img_div {
+    width: 95%;
+  }
+  .text_div {
+    width: 95%;
+  }
+  .paragraph {
+    font-size: 13px;
+    line-height: 25px;
+    margin-top: 10px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 20px;
+    text-align: justify;
+    max-width: 350px;
+  }
+  .see{
+    padding-left: 5%;
+
+  }
+
+  .btn_container {
+    display: flex;
+    justify-content: center;
+  }
+}

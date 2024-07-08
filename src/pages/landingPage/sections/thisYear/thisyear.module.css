@@ -1,0 +1,174 @@
+.thisyear_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thisyear_inner {
+  width: 90%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.thisyear {
+  text-align: justify;
+  max-width: 900px;
+}
+.thisyear_p{
+  padding-top: 15px;
+  color: #000000;
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sideImage{
+  padding-top: 50px;
+}
+.cards{
+  cursor: pointer;
+}
+.thisyear_inner > h1 {
+  color: #000000;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  padding-top: 60px;
+}
+
+
+
+.thisyear_flex_left_icon {
+  position: absolute;
+  top: 10%;
+  right: -160px;
+  width: 140px;
+}
+.flex_icon {
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  width: 70px;
+}
+.thisyear_flex_right_icon {
+  position: absolute;
+  bottom: 13%;
+  left: -160px;
+  width: 140px;
+}
+.thisyear_flex_left p,
+.thisyear_flex_right p {
+  padding: 110px;
+  color: var(--black);
+  /* text-align: right; */
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.destop_text {
+  display: block;
+}
+
+.mobile_text {
+  display: none;
+}
+@media screen and (min-width: 1024px) {
+
+.thisyear_flex_left{
+  margin-top: 5%;
+  gap: 45px;
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+  align-items: center;
+  text-align: center;
+  width: 27%;
+  position: relative;
+}
+}
+@media screen and (max-width: 999px) {
+  
+  .thisyear_inner > h1 {
+    font-size: 28px;
+    padding-top: 50px;
+  }
+  .thisyear_flex {
+    margin-top: 70px;
+  }
+  .thisyear {
+    text-align: justify;
+    font-size: 16px;
+  }
+
+  .thisyear_flex_left{
+    display: block;
+    align-items: center;
+    text-align: center;
+    width: 27%;
+    position: relative;
+  }
+  .thisyear_flex_left img{
+    padding: 3%;
+  }
+  .flex_icon {
+    position: absolute;
+    bottom: 32%;
+    width: 40px;
+  }
+  .thisyear_flex_right_icon {
+    bottom: 13%;
+    left: -60px;
+    width: 80px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .thisyear_inner > h1 {
+    font-size: 28px;
+    padding-top: 30px;
+  }
+  .thisyear_flex {
+    margin-top: 30px;
+    gap: 50px;
+    flex-direction: column;
+  }
+
+  .thisyear_flex_left,
+  .thisyear_flex_right {
+    width: 100%;
+  }
+
+  .thisyear_flex_right {
+    flex-direction: column-reverse;
+  }
+  .thisyear_flex_left p,
+  .thisyear_flex_right p {
+    padding: 10px 0px;
+    font-size: 16px;
+  }
+  .thisyear_flex_left_icon,
+  .thisyear_flex_right_icon {
+    display: none;
+  }
+  .flex_icon {
+    bottom: 25%;
+    width: 20px;
+  }
+  .thisyear_flex_right_icon {
+    bottom: 0%;
+    left: -30px;
+    width: 40px;
+  }
+
+  .desktop_text {
+    display: none;
+  }
+
+  .mobile_text {
+    display: block;
+  }
+
+  .read_more {
+    margin-top: 15px;
+  }
+}

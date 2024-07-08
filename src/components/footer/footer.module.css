@@ -1,0 +1,84 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: #007bff; /* Adjust this to match the exact blue color */
+  color: white;
+}
+
+.column {
+  flex: 1;
+  max-width: 300px;
+  margin: 0 20px;
+}
+
+.column h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.column p {
+  font-size: 14px;
+  margin-bottom: 40px;
+  margin-top: 10px;
+
+}
+
+.column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.column ul li {
+  margin-bottom: 10px;
+}
+
+.column ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.column ul li a:hover {
+  text-decoration: underline;
+}
+
+.subscribeContainer {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 50px;
+  max-width: 400px;
+}
+.mail{
+  color:white;
+  text-decoration:none;
+ 
+}
+.emailInput {
+  border: none;
+  padding: 5px 5px;
+  flex-grow: 1;
+  border-radius: 50px 0 0 50px;
+  outline: none;
+  font-size: 14px;
+}
+
+.subscribeButton {
+  background-color: #003b50; /* Adjust this to match the exact dark color */
+  color: #fff;
+  border: none;
+  padding: 15px 15px;
+  border-radius: 0 50px 50px 0;
+  cursor: pointer;
+  font-size: 14px;
+  outline: none;
+}
+
+.subscribeButton:hover {
+  background-color: #002a3d; /* Adjust this for a hover effect */
+}
+
+.emailInput::placeholder {
+  color: #aaa; /* Adjust the placeholder color if needed */
+}

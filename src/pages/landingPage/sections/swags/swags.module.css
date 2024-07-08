@@ -1,0 +1,135 @@
+.swag_container {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swag_inner {
+  width: 80%;
+  padding: 50px 0;
+}
+
+.swag_inner h1 {
+  color: #263789;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.flex_container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 30px; */
+  margin-top: 40px;
+  border-radius: 20px;
+}
+
+
+.flex_item:first-child {
+  padding: 2px;
+}
+
+
+
+.flex_item ul {
+  margin-top: 20px;
+  margin-left: 5rem;
+  margin-bottom: 20px;
+}
+
+.flex_item img {
+  max-width: 100%;
+}
+
+
+@media screen and (min-width: 1024px) {
+  .dot{
+    font-size: 20px;
+    color: #000;
+    max-width: 500px;
+    font-family: "Roboto";
+    font-weight: bolder;  
+  }
+  .regularButton{
+    background-color: #023147;
+    color: white;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  .ios{
+    color: #000;
+    margin-top: 5%;
+    font-size: 18px;
+  }
+  .flexx{
+    margin-left: 10%;
+  }
+  .swag_inner {
+    width: 90%;
+  }
+  .flex_item {
+    width: 50%;
+  }
+  .flex_items{
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .flex_container {
+    flex-direction:column;   
+  }
+  .regularButton{
+    background-color: #023147;
+    color: white;
+    margin-top: 20px;
+    justify-content: left;
+  }
+  .flexx{
+    padding-top: 5%;
+  }
+  .aa{
+    width: 20%;
+  }.ios{
+    color: white;
+    margin-top: 5%;
+    font-size: 13px;    
+    max-width: 400px;
+    font-family: "Roboto";
+  }
+  .dot{
+    justify-content: left;
+    font-size:20px;
+    color: white;
+    max-width: 200px;
+    font-family: "Roboto";
+    font-weight: bolder;  
+  
+  }
+  .flex_item {
+    width: 20%;
+    display: block;
+  }
+  .flex_items{
+    width:40%;
+    /* justify-content: center; */
+  }
+  .flex_item:first-child {
+    padding: 10px;
+  }
+  .swag_inner h1 {
+    color: #263789;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+
+  .btn_container {
+    display: flex;
+  }
+}

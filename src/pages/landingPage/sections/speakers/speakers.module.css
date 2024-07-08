@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 10rem;
+}
+
+.paragraph {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 80px;
+  color: #333;
+}
+
+.flex_container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background-color: #fff;
+
+}
+
+.testimonial {
+  text-align: center;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  background-color: #f9f9f9;
+  
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.text {
+  font-size: 14px;
+  color: #666;
+}

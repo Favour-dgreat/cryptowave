@@ -1,0 +1,229 @@
+.navbar_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0px;
+  position: absolute;
+  z-index: 10;
+}
+.sidee{
+  padding-right: 10px;
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+}
+.sidee:hover{
+  color: #007BFF;
+}
+.navbar_inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+}
+.navbar_inner img {
+  width: 150px;
+}
+.navbar_button:hover{
+  
+}
+.navbar_ul {
+  display: flex;
+  /* margin-left: 300px; */
+}
+
+.navbar_ul a {
+  text-decoration: none;
+  font-family: var(--font);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 30px;
+  transition: 0.5s ease;
+  float: right;
+  color: #000000;
+}
+.navbar_ul a:hover {
+  color: #007BFF;
+}
+
+.navbar_hamburger {
+  display: none;
+  width: 30px !important;
+  color: #000000B2;
+}
+
+/* The side navigation menu */
+.sidenav {
+  height: 100vh; /* 100% Full-height */
+  width: 100%; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 15; /* Stay on top */
+  top: 0; /* Stay at the top */
+  bottom: 0;
+  left: 0;
+  background-color: #263789; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 50px; /* Place content 60px from the top */
+  transition: 0.5s;
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidenav_inner {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+  padding-left: 40px;
+}
+
+.sidenav_show {
+  visibility: visible;
+  opacity: 1;
+}
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 30px;
+  color: white;
+  display: block;
+  font-family: var(--font);
+  font-weight: 500;
+}
+
+.sidenav_inner a {
+  padding: 0px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  /* margin: 25px 0px; */
+  color: white;
+}
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: var(--darkblue);
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidebar_button {
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-width: 1050px) {
+  .navbar_button {
+    display: none;
+  }
+  .navbar_hamburger {
+    display: block;
+  }
+  .navbar_ul a {
+    display: none;
+  }
+
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+
+
+
+.search_container {
+  display: flex;
+  align-items: center;
+}
+
+.search_input {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.search_button {
+  padding: 6px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-left: none;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
+}
+
+.user_info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user_name, .user_email {
+  display: block;
+  font-size: 14px;
+  color: #000;
+}
+
+.user_name {
+  font-weight: bold;
+}
+
+.navbar_hamburger {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidenav_show {
+  width: 250px;
+}
+
+.sidenav_inner {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.closebtn {
+  font-size: 36px;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  text-decoration: none;
+}
+
+.sidebar_button {
+  margin-top: 20px;
+}
