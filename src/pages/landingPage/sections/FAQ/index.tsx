@@ -2,7 +2,6 @@ import styles from "./pitch.module.css";
 // import pitchImg from "../../../../assets/pictures/Frame 35.png";
 import { useState } from 'react';
 // import Image from '../../../../components/images';
-import { RegularButton } from '../../../../components/buttons';
 
 
 const FAQ = () => {
@@ -115,4 +114,5 @@ const FAQ = () => {
 }
 
 
+// eslint-disable-next-line react-refresh/only-export-components
 export default FAQ;

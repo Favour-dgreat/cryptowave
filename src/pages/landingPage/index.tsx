@@ -2,7 +2,6 @@ import LandingLayout from "../../components/layout";
 import {Element} from 'react-scroll';
 import Pitch from "./sections/pitch";
 import Showcase from "./sections/showcase";
-import Story from "./sections/story";
 import ThisYear from "./sections/thisYear";
 import FAQ from "./sections/FAQ";
 // import Youtube from "./sections/youtube";

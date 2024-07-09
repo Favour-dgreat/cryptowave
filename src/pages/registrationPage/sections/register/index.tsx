@@ -40,11 +40,13 @@ const Register: React.FC = () => {
     setLoading(true);
 
     try {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       // Optionally, handle successful registration here if needed
 
       alert('User registered successfully');
       navigate('/login'); // Navigate to login page after successful registration
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       handleFirebaseError(err); // Handle Firebase authentication error
     } finally {
@@ -52,6 +54,7 @@ const Register: React.FC = () => {
     }
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleFirebaseError = (err: any) => {
     const errorCode = err.code;
     const errorMessage = err.message;

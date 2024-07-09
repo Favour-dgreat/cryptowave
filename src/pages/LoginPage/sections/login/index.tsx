@@ -25,13 +25,19 @@ const Login: React.FC = () => {
       await login(email, password);
       alert('User logged in successfully');
       navigate('/dashboard'); // Navigate to dashboard upon successful login
-    } catch (err) {
-      if (err.code === 'auth/user-not-found') {
-        setError('No user with such email exists, kindly create a new account');
-      } else if (err.code === 'auth/invalid-credential') {
-        setError('Wrong password, check your password and try again');
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        if ((err as any).code === 'auth/user-not-found') {  // Type assertion for Firebase error codes
+          setError('No user with such email exists, kindly create a new account');
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } else if ((err as any).code === 'auth/invalid-credential') {
+          setError('Wrong password, check your password and try again');
+        } else {
+          setError(err.message); // Handle other errors with a message property
+        }
       } else {
-        setError(err.message); // Handle other Firebase Authentication errors
+        setError('An unknown error occurred');
       }
     } finally {
       setLoading(false);

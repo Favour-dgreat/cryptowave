@@ -5,17 +5,8 @@ import hamburger from "../../assets/header/hamburger.svg";
 import { Link } from 'react-scroll';
 
 import { useState } from "react";
-import LoginPage from "../../pages/LoginPage";
 function Navbar() {
-  const [showModal, setShowModal] = useState(false);
-
-  const openModal = () => {
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-  };
+  
   const [isNavOpen, setIsNavOpen] = useState(false);
   const openNav = () => {
     setIsNavOpen(true);

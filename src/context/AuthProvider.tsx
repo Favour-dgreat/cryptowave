@@ -56,8 +56,13 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       // Manually setting the user object with the fullName property
       setUser({ ...user, displayName: fullName });
       setLoading(false);
-    } catch (error) {
+    } catch (error: unknown) {
       setLoading(false);
+      if (error instanceof Error) {
+        console.error(error.message);
+      } else {
+        console.error('An unknown error occurred');
+      }
       throw error;
     }
   };
@@ -77,14 +82,19 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         setUser(res.user);
       }
       setLoading(false);
-    } catch (error) {
+    } catch (error: unknown) {
       setLoading(false);
-      if (error.message.includes('Failed to get document because the client is offline')) {
-        console.error("Network error: Unable to fetch document because the client is offline.");
-        alert("Network error: Unable to fetch document because the client is offline.");
+      if (error instanceof Error) {
+        if (error.message.includes('Failed to get document because the client is offline')) {
+          console.error("Network error: Unable to fetch document because the client is offline.");
+          alert("Network error: Unable to fetch document because the client is offline.");
+        } else {
+          console.error(error.message);
+        }
       } else {
-        throw error;
+        console.error('An unknown error occurred');
       }
+      throw error;
     }
   };
 
@@ -115,14 +125,19 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       setUser(user);
       setLoading(false);
-    } catch (error) {
+    } catch (error: unknown) {
       setLoading(false);
-      if (error.message.includes('Failed to get document because the client is offline')) {
-        console.error("Network error: Unable to fetch document because the client is offline.");
-        alert("Network error: Unable to fetch document because the client is offline.");
+      if (error instanceof Error) {
+        if (error.message.includes('Failed to get document because the client is offline')) {
+          console.error("Network error: Unable to fetch document because the client is offline.");
+          alert("Network error: Unable to fetch document because the client is offline.");
+        } else {
+          console.error(error.message);
+        }
       } else {
-        throw error;
+        console.error('An unknown error occurred');
       }
+      throw error;
     }
   };
 
@@ -139,12 +154,16 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           } else {
             setUser(currentUser);
           }
-        } catch (error) {
-          if (error.message.includes('Failed to get document because the client is offline')) {
-            console.error("Network error: Unable to fetch document because the client is offline.");
-            alert("Network error: Unable to fetch document because the client is offline.");
+        } catch (error: unknown) {
+          if (error instanceof Error) {
+            if (error.message.includes('Failed to get document because the client is offline')) {
+              console.error("Network error: Unable to fetch document because the client is offline.");
+              alert("Network error: Unable to fetch document because the client is offline.");
+            } else {
+              console.error(error.message);
+            }
           } else {
-            throw error;
+            console.error('An unknown error occurred');
           }
         }
       } else {

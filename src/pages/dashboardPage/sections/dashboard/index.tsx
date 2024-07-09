@@ -12,7 +12,7 @@ import rec from '../../../../assets/pictures/Ellipse 11.png';
 import recc from '../../../../assets/pictures/Ellipse 11 (1).png';
 import reccc from '../../../../assets/pictures/Ellipse 11 (2).png';
 import {
-  PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer
+  PieChart, Pie, Cell, Tooltip, ResponsiveContainer
 } from 'recharts';
 
 
@@ -29,11 +29,7 @@ const Dashboard: React.FC = () => {
   };
 
 
-  const [tradeType, setTradeType] = useState('buy');
-
-  const handleTradeTypeChange = (type: string) => {
-    setTradeType(type);
-  }
+  
 
   const data = [
     { name: 'BTC', value: 40, color: '#007bff' },
