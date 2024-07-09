@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../context/AuthProvider';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'; // Adjust imports as per your Firebase setup
+import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'; 
 import styles from './register.module.css';
 
 const Register: React.FC = () => {
@@ -40,13 +41,9 @@ const Register: React.FC = () => {
     setLoading(true);
 
     try {
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      // Optionally, handle successful registration here if needed
-
+      await createUserWithEmailAndPassword(auth, email, password);
       alert('User registered successfully');
       navigate('/login'); // Navigate to login page after successful registration
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       handleFirebaseError(err); // Handle Firebase authentication error
     } finally {
@@ -54,7 +51,6 @@ const Register: React.FC = () => {
     }
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleFirebaseError = (err: any) => {
     const errorCode = err.code;
     const errorMessage = err.message;
@@ -117,7 +113,8 @@ const Register: React.FC = () => {
             onChange={(e) => setCountryCode(e.target.value)}
           >
             <option value="+234">+234</option>
-            {/* Add more country options here */}
+            <option value="+234">+1</option>
+
           </select>
           <input
             type="text"
