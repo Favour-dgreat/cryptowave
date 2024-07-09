@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../context/AuthProvider'; // Adjust the import path as needed
 import styles from './register.module.css';
 
@@ -10,7 +11,7 @@ const Login: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const authContext = useContext(AuthContext);
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   if (!authContext) {
     throw new Error('AuthContext must be used within an AuthProvider');
@@ -24,17 +25,15 @@ const Login: React.FC = () => {
     try {
       await login(email, password);
       alert('User logged in successfully');
-      navigate('/dashboard'); // Navigate to dashboard upon successful login
+      navigate('/dashboard');
     } catch (err: unknown) {
       if (err instanceof Error) {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        if ((err as any).code === 'auth/user-not-found') {  // Type assertion for Firebase error codes
+        if ((err as any).code === 'auth/user-not-found') {
           setError('No user with such email exists, kindly create a new account');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } else if ((err as any).code === 'auth/invalid-credential') {
           setError('Wrong password, check your password and try again');
         } else {
-          setError(err.message); // Handle other errors with a message property
+          setError(err.message);
         }
       } else {
         setError('An unknown error occurred');
@@ -87,4 +86,3 @@ const Login: React.FC = () => {
 };
 
 export default Login;
-

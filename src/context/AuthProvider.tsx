@@ -1,4 +1,3 @@
-// src/context/AuthProvider.tsx
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
 import {
   createUserWithEmailAndPassword,
