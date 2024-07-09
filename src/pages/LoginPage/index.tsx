@@ -7,10 +7,9 @@ function LoginPage() {
 
   return (
     <LandingLayout>
-       <Navbar>
-        
-        </Navbar>
-            <Login/>
+       <Navbar/>
+      
+        <Login/>
 
 
       {/* <Element name="aboutus">

@@ -16,9 +16,8 @@ function DashboardPage() {
 
   return (
     <LandingLayout>
-       <NavbarDashboard>
+       <NavbarDashboard/>
         
-        </NavbarDashboard>
       <Element name="ourprocess">
       <Register />
       </Element>

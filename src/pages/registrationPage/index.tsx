@@ -16,9 +16,8 @@ function RegistrationPage() {
 
   return (
     <LandingLayout>
-       <Navbar>
+       <Navbar/>
         
-        </Navbar>
       <Element name="ourprocess">
       <Register />
       </Element>

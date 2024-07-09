@@ -16,9 +16,8 @@ function LandingPage() {
 
   return (
     <LandingLayout>
-      <Navbar>
+      <Navbar/>
         
-      </Navbar>
       <Showcase />
 
       <Element name="ourprocess">
