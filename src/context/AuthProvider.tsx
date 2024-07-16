@@ -11,7 +11,7 @@ import {
   User
 } from 'firebase/auth';
 import { doc, getDoc, setDoc, getFirestore } from 'firebase/firestore';
-import app from '../firebase/firebase.config'; // adjust this path based on your project structure
+import { app } from '../firebase/firebase.config'; // Adjust the path based on your project structure
 
 const auth = getAuth(app);
 const db = getFirestore(app);
@@ -86,7 +86,6 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       if (error instanceof Error) {
         if (error.message.includes('Failed to get document because the client is offline')) {
           console.error("Network error: Unable to fetch document because the client is offline.");
-          alert("Network error: Unable to fetch document because the client is offline.");
         } else {
           console.error(error.message);
         }
@@ -129,7 +128,6 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       if (error instanceof Error) {
         if (error.message.includes('Failed to get document because the client is offline')) {
           console.error("Network error: Unable to fetch document because the client is offline.");
-          alert("Network error: Unable to fetch document because the client is offline.");
         } else {
           console.error(error.message);
         }
@@ -157,7 +155,6 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           if (error instanceof Error) {
             if (error.message.includes('Failed to get document because the client is offline')) {
               console.error("Network error: Unable to fetch document because the client is offline.");
-              alert("Network error: Unable to fetch document because the client is offline.");
             } else {
               console.error(error.message);
             }

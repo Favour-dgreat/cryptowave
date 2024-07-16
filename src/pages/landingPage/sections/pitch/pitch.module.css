@@ -22,15 +22,18 @@
 .cryptoName {
   font-size: 1.2em;
   margin-bottom: 10px;
+  text-align: left;
 }
 
 .cryptoValue {
   font-size: 1.5em;
   margin-bottom: 10px;
+  /* font-weight: bold; */
+  display: flex;
 }
 
 .cryptoChange {
-  font-size: 1.2em;
+  font-size: 20px;
 }
 
 .negative {
@@ -57,12 +60,14 @@
 }
 
 .showcase_button{
-background-color: inherit;
+  background-color: inherit;
 border: 1px solid #000;
 color: #000;
 border-radius: 10px;
 font-size: 12px;
 font-weight: 100;
+padding: 15px ;
+cursor: pointer;
 }
 
 .pitchImage {

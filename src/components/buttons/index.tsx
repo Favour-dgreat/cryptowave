@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import styles from "./buttons.module.css";
 import { Link } from "react-router-dom";
 

@@ -1,11 +1,17 @@
 {
   "hosting": {
-    "public": "public",
-    "site": "cryptowavee",
+    "public": "build",
+    "site": "cryptowaves",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   }
 }

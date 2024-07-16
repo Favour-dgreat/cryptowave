@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './dashboard.module.css';
 import Image from '../../../../components/images';
-import wave from '../../../../assets/pictures/wavy.png';
 import charts from '../../../../assets/pictures/Frame 146.png';
 import eth from '../../../../assets/pictures/image 4.png';
 import btc from '../../../../assets/pictures/image 3.png';
@@ -11,14 +10,20 @@ import sol from '../../../../assets/pictures/image 7.png';
 import rec from '../../../../assets/pictures/Ellipse 11.png';
 import recc from '../../../../assets/pictures/Ellipse 11 (1).png';
 import reccc from '../../../../assets/pictures/Ellipse 11 (2).png';
+import icon from "../../../../assets/pictures/image 9.png";
+import icon1 from "../../../../assets/pictures/image 10.png";
+import icon2 from "../../../../assets/pictures/image 11.png";
+import icon3 from "../../../../assets/pictures/image 12.png";
+import icon4 from "../../../../assets/pictures/image 13.png";
+import icon5 from "../../../../assets/pictures/coin-removebg-preview.png";
 import {
   PieChart, Pie, Cell, Tooltip, ResponsiveContainer
 } from 'recharts';
-
+import { CaretDownFill } from 'react-bootstrap-icons';
 
 const Dashboard: React.FC = () => {
   
-  const dummyName = "David Patrick Rosu";
+  const dummyName = "Cara Liana Fuqua";
   // const [selectedCrypto, setSelectedCrypto] = useState('ETH');
   const [amount, setAmount] = useState(0.3584);
   const [amount1, setAmount1] = useState(0.3586);
@@ -27,10 +32,7 @@ const Dashboard: React.FC = () => {
   const handleActionClick = (newAction: 'Buy' | 'Sell') => {
     setAction(newAction);
   };
-
-
   
-
   const data = [
     { name: 'BTC', value: 40, color: '#007bff' },
     { name: 'ETH', value: 25, color: '#c5f014' },
@@ -45,88 +47,66 @@ const Dashboard: React.FC = () => {
       <div className={styles.sidebar}>
         <ul>
           <a href="">
-          <li className={styles.active}>Dashboard</li>
+          
+          <li className={styles.actives} style={{color: 'black'}}> <span style={{marginRight:'3px' }}> <Image src={icon} className={styles.icons}  />
+          </span> Dashboard</li>
           </a>
 
           <a href="">
-          <li>Portfolio</li>
+          <li> <span style={{marginRight:'3px'}}> <Image src={icon1} className={styles.icons}  />
+          </span> Portfolio</li>
           </a>
 
           <a href="">
-          <li>Transactions</li>
+          <li> <span style={{marginRight:'3px'}}> <Image src={icon2} className={styles.icons}  />
+          </span> Transactions</li>
           </a>
 
           <a href="">
-          <li>Market</li>
+          <li> <span > <Image src={icon3} className={styles.icons} style={{paddingRight:'10px'}}  />
+          </span> Market</li>
           </a>
           
           <a href="">
-          <li>Settings</li>
+          <li><span style={{marginRight:'3px'}}> <Image src={icon4} className={styles.icons}  />
+          </span> Settings</li>
           </a>
         </ul>
       </div>
       <div className={styles.main_content}>
         <header className={styles.header}>
-          <h1>Welcome {dummyName}!</h1>
+          <h1>Welcome Back, {dummyName}!</h1>
         </header>
         <div className={styles.stats}>
           <div className={styles.stat}>
-            <h2>Total Amount of Profit</h2>
-            <p>$28,000</p>
-            <small>For last 4 days</small>
-            <Image src={wave} />
+           
+            <div className={styles.a1}>
+            <Image src={icon5} />
+
+            </div>
+            <div className={styles.a2}>
+              <h3>Begin your investment journey now and watch your wealth grow</h3>
+              <p>Unlock your financial potential and start investing today. Take advantage of market opportunities with just a few clicks</p>
+            </div>
+            
 
           </div>
-          <div className={styles.stat}>
-            <h2>Investment</h2>
-            <p>$28,000</p>
-            <small style={{color: "green"}}>▲4.26%</small>
-            <Image  src={wave} />
-
-          </div>
-          <div className={styles.container}>
-    <h3>Portfolio Distribution (%)</h3>
-    <div className={styles.chartWrapper}>
-      <ResponsiveContainer width="100%" height={200}>
-        <PieChart>
-          <Pie
-            data={data}
-            dataKey="value"
-            nameKey="name"
-            cx="50%"
-            cy="50%"
-            outerRadius={80}
-            fill="#8884d8"
-          >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
-            ))}
-          </Pie>
-          <Tooltip />
-        </PieChart>
-      </ResponsiveContainer>
-    </div>
-    <ul className={styles.legend}>
-      {data.map((entry, index) => (
-        <li key={`legend-${index}`}>
-          <span style={{ backgroundColor: entry.color }}></span>
-          {`${entry.name}: ${entry.value}%`}
-        </li>
-      ))}
-    </ul>
-    <a href="/" className={styles.viewDetails}>View Details</a>
-  </div>
+         
         </div>
         <div className={styles.market_trends}>
         <div className={styles.trends}>
-
-          <h2>Market Trends</h2>
-          <select>
-              <option>Last 12 hours</option>
-              <option>Last 24 hours</option>
-              <option>Last 7 days</option>
-            </select>
-
+        <div className={styles.contentss}>
+          <h2>Market Performance</h2> 
+          <div className={styles.right}>
+            <p>. . .</p>
+            <label>Sort by:</label>
+            <select>
+                <option>This Month</option>
+                <option>Last Month</option>
+                <option>Last 7 days</option>
+              </select>
+          </div>
+        </div>
             <div className={styles.trends_chart}>
           <Image src={charts} />
           
@@ -161,6 +141,60 @@ const Dashboard: React.FC = () => {
           </ul>
           <a href="/" className={styles.all} style={{textAlign: 'center', color: 'black', paddingTop: 30}}> See all</a>
         </div>
+        </div>
+        <div className={styles.stats}>
+          <div className={styles.statt}>
+          <div className={styles.stattt}>
+
+            <h2>Total Amount of Profit</h2>
+            <p>$28,000  <CaretDownFill style={{color:'#006400', fontSize: '18px'}}></CaretDownFill>
+            <small style={{color:'#006400', fontSize: '18px'}}>4.26%</small></p>
+            <br/>
+            <a href="" style={{textDecoration: 'underline', color:'#006400',}}> View Analytics</a>
+            </div>
+          </div>
+          <div className={styles.statt}>
+            <h2>Investment</h2>
+            <p>$500</p>
+            <h6 style={{textAlign: 'left', color: '#a8a8a8', fontWeight: '300'}}>$500-$5000 initial deposit</h6>
+            <br/>
+
+            <a href="" style={{textDecoration: 'underline', color:'#007BFF', marginTop: '120px'}}> Make Payment</a>
+
+          </div>
+          <div className={styles.container}>
+    <h2 style={{ fontWeight: '100'}}>My investment Records (%)</h2>
+    <div className={styles.chartWrapper}>
+      <ResponsiveContainer width="100%" height={100}>
+        <PieChart>
+          <Pie
+            data={data}
+            dataKey="value"
+            nameKey="name"
+            cx="50%"
+            cy="50%"
+            outerRadius={40}
+            fill="#8884d8"
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
+      </ResponsiveContainer>
+      <ul className={styles.legend}>
+      {data.map((entry, index) => (
+        <li key={`legend-${index}`}>
+          <span style={{ backgroundColor: entry.color }}></span>
+          {`${entry.name}: ${entry.value}%`}
+        </li>
+      ))}
+    </ul>
+    </div>
+    
+    <a href="/" className={styles.viewDetails}>View Details</a>
+  </div>
         </div>
         <div className={styles.sect}>
         <div className={styles.portfolio}>

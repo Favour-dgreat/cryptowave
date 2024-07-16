@@ -2,7 +2,7 @@ import styles from "./pitch.module.css";
 // import pitchImg from "../../../../assets/pictures/Frame 35.png";
 import { useState } from 'react';
 // import Image from '../../../../components/images';
-import { RegularButton } from '../../../../components/buttons';
+import { CaretDownFill } from 'react-bootstrap-icons';
 
 
 export const Pitch = () => {
@@ -14,19 +14,25 @@ export const Pitch = () => {
   
     const cryptoData = [
       {
-        name: 'Bitcoin (BTC)',
-        value: '$22,695.00',
+        name: 'BITCOIN to USDT',
+        value: '$57,436.96',
         change: '-2.51%',
       },
       {
-        name: 'Ethereum (ETH)',
+        name: 'Ethereum to USDT',
         value: '$1,679.00',
         change: '-4.26%',
       },
       {
-        name: 'Tether (USDT)',
+        name: 'Solana to BNB',
         value: '$0.98',
         change: '-5.45%',
+      },
+      {
+        name: 'LTC to USDT',
+        value: '$0.98',
+        change: '-5.45%',
+
       },
     ];
   return (
@@ -98,10 +104,12 @@ Join us in revolutionizing the world of finance, one transaction at a time, and 
       {cryptoData.map((crypto, index) => (
         <div className={styles.cryptoItem} key={index}>
           <div className={styles.cryptoName}>{crypto.name}</div>
-          <div className={styles.cryptoValue}>{crypto.value}</div>
-          <div className={`${styles.cryptoChange} ${crypto.change.includes('-') ? styles.negative : styles.positive}`}>
-            {crypto.change} (24hr)
+          <div className={styles.cryptoValue}>{crypto.value}
+          <div className={`${styles.cryptoChange} ${crypto.change.includes('-') ? styles.negative : styles.positive }`}>
+           <CaretDownFill></CaretDownFill> {crypto.change} (24hr)
           </div>
+          </div>
+         
         </div>
       ))}
     </div>
@@ -115,10 +123,10 @@ Join us in revolutionizing the world of finance, one transaction at a time, and 
               )}
             </div>
             <br/>
-            <RegularButton
-                  title="See More"
-                  className={styles.showcase_button}
-                />          
+            <button className={styles.showcase_button}>
+              See More
+            </button>
+                 
                 </div>
 
             {/* <div>

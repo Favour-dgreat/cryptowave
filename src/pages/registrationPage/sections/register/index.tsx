@@ -112,9 +112,17 @@ const Register: React.FC = () => {
             value={countryCode}
             onChange={(e) => setCountryCode(e.target.value)}
           >
-            <option value="+234">+234</option>
-            <option value="+234">+1</option>
-
+              <option value="+1"> (+1)</option>
+              <option value="+44"> (+44)</option>
+              <option value="+33"> (+33)</option>
+              <option value="+49">(+49)</option>
+              <option value="+39"> (+39)</option>
+              <option value="+34"> (+34)</option>
+              <option value="+31">(+31)</option>
+              <option value="+41">(+41)</option>
+              <option value="+46">(+46)</option>
+              <option value="+358">(+358)</option>
+              <option value="+47">(+47)</option>
           </select>
           <input
             type="text"

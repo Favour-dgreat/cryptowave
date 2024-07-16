@@ -5,18 +5,19 @@ import { RegularButton } from "../buttons";
 import hamburger from "../../assets/header/hamburger.svg";
 import { Link } from 'react-scroll';
 import { AuthContext } from '../../context/AuthProvider'; // Import your AuthContext
+import { BellFill, PersonCircle,  CaretDownFill } from 'react-bootstrap-icons';
 
 function NavbarDashboard() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [userName, setUserName] = useState("David Patrick Rosu");
-  const [userEmail, setUserEmail] = useState("davispat2039@gmail.com");
+  const [userName, setUserName] = useState("Cara Liana Fuqua");
+  const [userEmail, setUserEmail] = useState("caraliana.fuqua@gmail.com");
 
   const authContext = useContext(AuthContext); // Assuming AuthContext provides user information
 
   useEffect(() => {
     if (authContext?.user) {
-      setUserName(authContext.user.displayName || "David Patrick Rosu");
-      setUserEmail(authContext.user.email || "davispat2039@gmail.com");
+      setUserName(authContext.user.displayName || "Cara Liana Fuqua");
+      setUserEmail(authContext.user.email || "caraliana.fuqua@gmail.com");
     }
   }, [authContext]);
 
@@ -34,9 +35,19 @@ function NavbarDashboard() {
             <input type="text" placeholder="Search.." className={styles.search_input} />
             <button className={styles.search_button}>Q</button>
           </div>
+
           <div className={styles.user_info}>
+          <BellFill style={{color:'black', lineHeight: '120px', fontSize: '30px', cursor: 'pointer'}}></BellFill> 
+          <div className={styles.user_info1}>
+
             <span className={styles.user_name}>{userName}</span>
             <span className={styles.user_email}>{userEmail}</span>
+
+
+            </div>
+            <PersonCircle style={{color:'#4294ff', fontSize: '40px', cursor: 'pointer'}}></PersonCircle> 
+            <CaretDownFill style={{color:'#000000', fontSize: '20px', cursor: 'pointer'}}></CaretDownFill> 
+
             <img
               src={hamburger}
               className={styles.navbar_hamburger}

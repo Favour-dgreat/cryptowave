@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../../../context/AuthProvider'; // Adjust the import path as needed
+import { AuthContext } from '../../../../context/AuthProvider';
 import styles from './register.module.css';
 
 const Login: React.FC = () => {
@@ -17,23 +17,31 @@ const Login: React.FC = () => {
     throw new Error('AuthContext must be used within an AuthProvider');
   }
 
-  const { login } = authContext;
+  // const { login } = authContext;
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setError(null); // Clear previous error
     try {
-      await login(email, password);
+      // await login(email, password);
       alert('User logged in successfully');
       navigate('/dashboard');
     } catch (err: unknown) {
       if (err instanceof Error) {
-        if ((err as any).code === 'auth/user-not-found') {
-          setError('No user with such email exists, kindly create a new account');
-        } else if ((err as any).code === 'auth/invalid-credential') {
-          setError('Wrong password, check your password and try again');
-        } else {
-          setError(err.message);
+        const errorCode = (err as any).code;
+        switch (errorCode) {
+          case 'auth/user-not-found':
+            setError('No user with such email exists, kindly create a new account');
+            break;
+          case 'auth/wrong-password':
+            setError('Wrong password, check your password and try again');
+            break;
+          case 'permission-denied':
+            setError('Missing or insufficient permissions.');
+            break;
+          default:
+            setError(err.message);
         }
       } else {
         setError('An unknown error occurred');
@@ -73,7 +81,7 @@ const Login: React.FC = () => {
 
         {error && <p className={styles.error}>{error}</p>}
 
-        <button type="submit" className={styles.button} disabled={loading}>
+        <button  className={styles.button} disabled={loading}>
           {loading ? 'Loading...' : 'Login'}
         </button>
 

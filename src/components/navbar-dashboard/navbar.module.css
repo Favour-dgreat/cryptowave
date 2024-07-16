@@ -176,6 +176,9 @@
   align-items: center;
   gap: 10px;
 }
+.user_info1{
+  display: block;
+}
 
 .user_name, .user_email {
   display: block;
