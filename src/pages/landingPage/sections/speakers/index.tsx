@@ -13,7 +13,7 @@ function Speakers() {
   return (
     <>
       <section className={styles.container}>
-        <p className={styles.paragraph}>What Our Customers are saying? </p>
+        <h1 className={styles.paragraph}>What our Customers are saying? </h1>
         <div className={styles.flex_container}>
         <div className={styles.testimonial}>
         <img src={speaker2} alt="Grace Watson" className={styles.avatar} />

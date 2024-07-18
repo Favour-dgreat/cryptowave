@@ -5,13 +5,13 @@ import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAVawLDjh9QJ-PNf11b6Ccr3kim2_M9H58",
-  authDomain: "school-project-449e7.firebaseapp.com",
-  projectId: "school-project-449e7",
-  storageBucket: "school-project-449e7.appspot.com",
-  messagingSenderId: "95290281214",
-  appId: "1:95290281214:web:6864e32534adbd98b729af",
-  measurementId: "G-QMJSEF6VWN"
+  apiKey: "AIzaSyBt08anfNdg8gn72Wdlk17fUG3ederAHHY",
+  authDomain: "cryptowavee-df519.firebaseapp.com",
+  projectId: "cryptowavee-df519",
+  storageBucket: "cryptowavee-df519.appspot.com",
+  messagingSenderId: "626591191230",
+  appId: "1:626591191230:web:4f96d86ed29ed883b74eef",
+  measurementId: "G-BMBDTTP3EN"
 };
 
 const app = initializeApp(firebaseConfig);

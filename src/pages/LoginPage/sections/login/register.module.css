@@ -1,3 +1,5 @@
+@media screen and (min-width: 1050px) {
+
 .container {
   display: flex;
   justify-content: center;
@@ -24,6 +26,7 @@
 .form p {
   margin-bottom: 50px;
   color: #666666;
+  font-size: 20px;
 }
 
 .label {
@@ -34,7 +37,7 @@
 }
 
 .input {
-  width: calc(100% - 20px);
+  width: calc(100%);
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #dddddd;
@@ -96,4 +99,104 @@
 .footer {
   margin-top: 20px;
   color: #666666;
+}
+}
+
+@media screen and (max-width: 600px) {
+  
+  .container{
+    width: 100%;
+    padding-top: 20%;
+  }
+  .form {
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+  }
+  .form h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .form p {
+    margin-bottom: 50px;
+    color: #666666;
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .label {
+    text-align: left;
+    display: block;
+    margin-bottom: 25px;
+    font-weight: 500;
+  }
+  
+  .input {
+    width: calc(100%);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-sizing: border-box;
+  }
+  
+  .select_input_container {
+    display: flex;
+    margin-bottom: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .select {
+    border: none;
+    padding: 8px;
+    background: white;
+    appearance: none;
+    background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTEiIGhlaWdodD0iNyIgdmlld0JveD0iMCAwIDExIDciIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgMUw1LjUgNUwxMCAxIiBzdHJva2U9IiM2NjYiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc=') no-repeat right center;
+    background-size: 8px;
+  }
+  
+  .text_input {
+    border: none;
+    flex-grow: 1;
+    padding: 10px;
+  }
+  
+  .button {
+    background-color: #e0e0e0;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #bdbdbd;
+  }
+  
+  .button span {
+    margin-left: 10px;
+  }
+  
+  .link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  .footer {
+    margin-top: 20px;
+    color: black;
+    text-align: center;
+    margin-bottom: 80px;
+  }
 }

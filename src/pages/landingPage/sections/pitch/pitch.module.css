@@ -1,11 +1,97 @@
 .pitch_container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.pitch_inner, .pitch_inner1 {
+  margin-bottom: 20px;
+}
+
+.pitch_header {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.paragraph, .paragraph2, .paragraph3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.see {
+  cursor: pointer;
+  color: blue;
+}
+
+.content_div {
+  display: flex;
+  flex-direction: column;
+}
+
+.text_div {
+  display: flex;
+  flex-direction: column;
+}
+
+.cryptoInfo {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cryptoItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  flex: 1;
+  min-width: 120px;
+}
+
+.cryptoName {
+  font-weight: bold;
+  text-align: center;
+}
+
+.cryptoValue {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cryptoChange {
+  display: flex;
+  align-items: center;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+@media screen and (min-width: 1050px) {
+
+.pitch_container {
   display: block;
   align-items: center;
   justify-content: center;
   padding: 4rem 0;
-  margin-top: 2rem;
   margin: 0 auto;
   width: 100%;
+}
+.pitch_inner{
+  padding: 100px;
+  text-align: center;
+  justify-content: center;
+
 }
 .cryptoInfo {
   display: flex;
@@ -37,38 +123,43 @@
 }
 
 .negative {
-  color: #006400; /* Green */
+  color: #ff0000; /* Red */
 }
 
 .positive {
-  color: #ff0000; /* Red */
+  color: #006400; /* Green */
 }
 
 .cryptoChange.positive {
-  color: #ff0000; /* Red */
+  color: #006400; /* Green */
 }
 .pitch_header {
   font-family: var(--font);
   color: #000;
+  font-size: 30px;
   font-weight: 300;
   text-align: center;
   line-height: normal;
+  margin-top: -30px;
+  margin-bottom: 50px;
 }
 .see{
   color: #007BFF;
   cursor: pointer;
+  text-align: center;
+  font-size: 16px;
 }
 
 .showcase_button{
   background-color: inherit;
-border: 1px solid #000;
-color: #000;
-border-radius: 10px;
-font-size: 12px;
-font-weight: 100;
-padding: 15px ;
-cursor: pointer;
-}
+  border: 1px solid #000;
+  color: #000;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 100;
+  padding: 15px ;
+  cursor: pointer;
+  }
 
 .pitchImage {
   width: 100%;
@@ -88,11 +179,31 @@ cursor: pointer;
   /* text-align: center; */
 }
 .paragraph {
-  width: 100%;
   font-family: 'Roboto';
   font-size: 15px;
   line-height: 28px; 
+  justify-content: center;
   text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.paragraph2 {
+  font-family: 'Roboto';
+  font-size: 15px;
+  line-height: 28px; 
+  justify-content: center;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.paragraph3 {
+  font-family: 'Roboto';
+  font-size: 15px;
+  line-height: 28px; 
+  justify-content: center;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .button {
   background-color: var(--darkblue);
@@ -116,7 +227,7 @@ cursor: pointer;
 .regularButton {
   margin-top: 20px;
 }
-
+}
 @media screen and (min-width: 1024px) {
   .content_div {
     background: #f0f1f7;
@@ -124,26 +235,23 @@ cursor: pointer;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
   }
 
-  .content_div1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 30px;
-  }
-
+ 
 .pitch_inner {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .pitch_inner1 {
   width: 80%;
   margin: 0 auto;
+}
 
+.pitch_header{
+  text-align: center;
+  justify-content: center;
 }
 }
 
@@ -154,103 +262,89 @@ cursor: pointer;
   .pitch_inner1 {
     width: 90%;
   }
-  .paragraph {
-    font-size: 1rem;
-  }
+ 
   .pitch_container {
     margin-top: 2rem;
   }
 }
 @media screen and (max-width: 950px) {
+  .pitch_container{
+    display: block;
+  }
+  .pitch_header{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 50px;
+
+  }
   .pitch_inner {
     width: 100%;
   }
   .pitch_inner1 {
     width: 100%;
+    background-color: #f0f1f7;
+    margin-top: 50px;
   }
-  .content_div {
-    margin-top: 2rem;
-    flex-direction: column;
-    width: 95%;
-    gap: 20px;
-  }
-  .content_div1 {
-    margin-top: 2rem;
-    flex-direction: column;
-    width: 95%;
-    gap: 20px;
-  }
+ 
   .see{
     color: #007BFF;
     cursor: pointer;
     font-size: 16px;
+    text-align: center;
+    justify-content: center;
   }
-  .img_div {
-    width: 70%;
-  }
+ 
   .text_div {
     width: 100%;
     padding: 2%;
-    margin-top: -40%;
     font-weight: 100px;
-    text-align: left;
+    text-align: center;
   }
-  .pitch_container {
-    margin-top: 5rem;
-  }
-  .paragraph {
-    width: 100%;
-    font-family: 'Roboto';
-    font-size: 12px;
-    text-align: left;
-  }
+
  
 }
-@media screen and (max-width: 500px) {
-  .pitchImage{
-    justify-content: center;
+@media screen and (max-width: 600px) {
+  .pitch_header {
+    font-size: 1.2rem;
+  }
+  .showcase_button{
+   display: none;
+    }
+  .paragraph, .paragraph2, .paragraph3 {
+    font-size: 0.9rem;
+  }
+
+  .cryptoItem {
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 100%;
+  }
+
+  .cryptoValue {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 10px;
     text-align: center;
-    margin-top: -25%;
   }
-  .content_div {
-    background: #f0f1f7;
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-    gap: 20px;
-    width: 100%;
+
+  .cryptoChange {
+    margin-left: 10px;
   }
-  .content_div {
-    margin-top: 2rem;
-    gap: 20px;
-    width: 100%;
-    border-radius: 5px;
-  }
-  .content_div1 {
-    margin-top: 2rem;
-    gap: 20px;
-    width: 100%;
-    border-radius: 5px;
-  }
-  .img_div {
-    width: 95%;
-  }
-  .text_div {
-    width: 95%;
-  }
+  
   .paragraph {
-    font-size: 13px;
     line-height: 25px;
     margin-top: 10px;
-    padding-left: 5%;
-    padding-right: 5%;
     margin-top: 20px;
-    text-align: justify;
-    max-width: 350px;
+    text-align: center;
+    padding: 20px;
   }
-  .see{
-    padding-left: 5%;
-
+  .paragraph2 {
+   display: none;
+  }
+  .paragraph3{
+    display: none;
   }
 
   .btn_container {

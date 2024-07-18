@@ -17,14 +17,14 @@ const Login: React.FC = () => {
     throw new Error('AuthContext must be used within an AuthProvider');
   }
 
-  // const { login } = authContext;
+  const { login } = authContext;
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null); // Clear previous error
     try {
-      // await login(email, password);
+      await login(email, password);
       alert('User logged in successfully');
       navigate('/dashboard');
     } catch (err: unknown) {
@@ -54,7 +54,7 @@ const Login: React.FC = () => {
   return (
     <div className={styles.container}>
       <form className={styles.form} onSubmit={handleLogin}>
-        <h2>Login to your account</h2>
+        <h2>Welcome Back! Please log into your account</h2>
         <p>
           Unlock the Full Potential of Cryptocurrency with Secure, Fast, and Global Transactions
         </p>
@@ -81,7 +81,7 @@ const Login: React.FC = () => {
 
         {error && <p className={styles.error}>{error}</p>}
 
-        <button  className={styles.button} disabled={loading}>
+        <button className={styles.button} disabled={loading}>
           {loading ? 'Loading...' : 'Login'}
         </button>
 

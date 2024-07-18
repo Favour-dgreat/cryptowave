@@ -1,41 +1,47 @@
+/* footer.module.css */
+
 .footer {
   display: flex;
   justify-content: space-between;
   padding: 40px;
-  background-color: #007bff; /* Adjust this to match the exact blue color */
-  color: white;
+  background-color: #d9d9d9; /* Adjust this to match the exact blue color */
+  color: black;
 }
 
 .column {
   flex: 1;
   max-width: 300px;
-  margin: 0 20px;
+  margin: 0;
+  text-align: center;
 }
 
 .column h3 {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 400;
   margin-bottom: 10px;
+  text-align: center;
+  margin-right: 18px;
 }
 
 .column p {
   font-size: 14px;
   margin-bottom: 40px;
-  margin-top: 10px;
-
+  text-align: center;
 }
 
 .column ul {
   list-style: none;
   padding: 0;
+  margin-right: 30px;
 }
 
 .column ul li {
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .column ul li a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
@@ -47,14 +53,15 @@
   display: flex;
   align-items: center;
   background-color: #fff;
-  border-radius: 50px;
+  border-radius: 10px;
   max-width: 400px;
 }
-.mail{
-  color:white;
-  text-decoration:none;
- 
+
+.mail {
+  color: black;
+  text-decoration: none;
 }
+
 .emailInput {
   border: none;
   padding: 5px 5px;
@@ -69,7 +76,7 @@
   color: #fff;
   border: none;
   padding: 15px 15px;
-  border-radius: 0 50px 50px 0;
+  border-radius: 10px 10px 10px 10px;
   cursor: pointer;
   font-size: 14px;
   outline: none;
@@ -81,4 +88,76 @@
 
 .emailInput::placeholder {
   color: #aaa; /* Adjust the placeholder color if needed */
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .column {
+    max-width: 100%;
+    margin: 10px 0;
+    padding: 0 10px;
+  }
+
+  .subscribeContainer {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 400px;
+  }
+  
+
+  .emailInput {
+    border: none;
+    padding: 5px 5px;
+    flex-grow: 1;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .subscribeButton {
+    background-color: #003b50; /* Adjust this to match the exact dark color */
+    color: #fff;
+    border: none;
+    padding: 15px 15px;
+    border-radius: 10px 10px 10px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .subscribeButton:hover {
+    background-color: #002a3d; /* Adjust this for a hover effect */
+  }
+  
+  .emailInput::placeholder {
+    color: #aaa; /* Adjust the placeholder color if needed */
+  }
+
+  .column ul li {
+    text-align: center;
+  }
+
+  .column h3 {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .mail {
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .column p {
+    text-align: center;
+    font-size: 14px;
+  }
 }

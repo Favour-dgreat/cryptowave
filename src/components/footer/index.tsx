@@ -4,12 +4,11 @@ import styles from "./footer.module.css";
 
 
 
-
 const Footer = () => {
   return (
     <footer className={styles.footer}>
-      <div className={styles.column}>
-        <h3>Subscribe to your newsletter</h3>
+      <div className={styles.column} >
+        <h3>Subscribe to our newsletter</h3>
         <p>Stay upright in the crypto world and be the first to know</p>
         <div className={styles.subscribeContainer}>
           <input
@@ -20,7 +19,7 @@ const Footer = () => {
           <button className={styles.subscribeButton}>Subscribe</button>
         </div>
       </div>
-      <div className={styles.column}>
+      <div className={styles.column} >
         <h3>Quick Links</h3>
         <ul>
           <li><a href="#">How it works</a></li>
@@ -31,9 +30,10 @@ const Footer = () => {
         </ul>
       </div>
       <div className={styles.column}>
-        <h3>Contact us</h3>
-        <a href="mailto:info@cryptowave.org" className={styles.mail} >info@cryptowave.org</a>
-        <p>© 2024 Cryptowave Limited, All rights Reserved.</p>
+        <h3>Get in touch</h3>
+        <a href="https://www.cryptochainwave.com/" className={styles.mail} >https://www.cryptochainwave.com/</a>
+        <br></br>
+        <p> &copy; 2024 Cryptowave Limited, All rights Reserved.</p>
       </div>
     </footer>
   );

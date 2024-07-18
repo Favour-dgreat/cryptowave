@@ -2,7 +2,6 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../../context/AuthProvider';
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth'; 
 import styles from './register.module.css';
 
 const Register: React.FC = () => {
@@ -17,13 +16,12 @@ const Register: React.FC = () => {
   const [loading, setLoading] = useState(false);
 
   const authContext = useContext(AuthContext);
-  const navigate = useNavigate();
-
   if (!authContext) {
-    throw new Error('AuthContext must be used within an AuthProvider');
+    throw new Error('useAuth must be used within an AuthProvider');
   }
+  const { registerUser } = authContext;
 
-  const auth = getAuth(); // Initialize Firebase auth instance
+  const navigate = useNavigate();
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -41,9 +39,9 @@ const Register: React.FC = () => {
     setLoading(true);
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await registerUser({email, password, phoneNumber, fullName, username});
       alert('User registered successfully');
-      navigate('/login'); // Navigate to login page after successful registration
+      navigate('/login'); // Navigate to login page after su, ccessful registration
     } catch (err: any) {
       handleFirebaseError(err); // Handle Firebase authentication error
     } finally {

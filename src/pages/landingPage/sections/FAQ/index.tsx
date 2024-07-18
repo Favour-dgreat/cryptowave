@@ -19,9 +19,9 @@ const FAQ = () => {
     <div id="pitch_container" className={styles.pitch_container}>
     
       <div className={styles.pitch_inner}>
-        <h2 className={styles.pitch_header}>
+        <h1 className={styles.pitch_header}>
          Frequently Asked Questions
-        </h2>
+        </h1>
 
         <div className={styles.faq_item}>
         <div 

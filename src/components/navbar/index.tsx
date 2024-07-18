@@ -1,13 +1,14 @@
+import { useState, useEffect } from "react";
 import logo from "../../assets/header/lg.png";
+import logo1 from "../../assets/header/image 1 (1).png"
 import styles from "./navbar.module.css";
 import { RegularButton } from "../buttons";
-import hamburger from "../../assets/header/hamburger.svg";
-import { Link } from 'react-scroll';
+import hamburger from "../../assets/header/Group 1 (1).png";
 
-import { useState } from "react";
 function Navbar() {
-  
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
   const openNav = () => {
     setIsNavOpen(true);
   };
@@ -16,55 +17,46 @@ function Navbar() {
     setIsNavOpen(false);
   };
 
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 768);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    
     <>
-    
       <div className={styles.navbar_container}>
         <div className={styles.navbar_inner}>
           <a href="/">
-          <img src={logo} style={{cursor:"pointer"}}alt="devfest23" />
+        
+            <img src={isMobile ? logo1 : logo} style={{ cursor: "pointer" }} alt="devfest23" className={styles.mylogo} />
           </a>
           <div className={styles.navbar_ul}>
-            <a href="/">
-         
-              How it works
-            </a>
-
-            <a href="/">
-         
-              Pricing 
-            </a>
-
-            <a href="/">
-         
-              About Us 
-            </a>
-            <a href="/">
-         
-            FAQs 
-            </a>
-            <a href="/">
-         
-              Contact Us
-            </a>
-           
+            <a href="/">How it works</a>
+            <a href="/">Pricing</a>
+            <a href="/">About Us</a>
+            <a href="/">FAQs</a>
+            <a href="/">Contact Us</a>
           </div>
+          <RegularButton
+                title="Sign Up"
+                className={styles.navbar_buttons}
+                href='/signup'
+              />
           <div>
-
-            <a href="/signup" className={styles.sidee} >SignUp</a>
-          {/* <Link
-              to="/signup" 
-            >
-             Sign Up
-            </Link> */}
-            <a href="/login">
-            <RegularButton
-              title="Login"
-              className={styles.navbar_button}
             
-            />
-          </a>
+            <a href="/signup" className={styles.sidee}>SignUp</a>
+            <a href="/login">
+              <RegularButton
+                title="Login"
+                className={styles.navbar_button}
+              />
+            </a>
             <img
               src={hamburger}
               className={styles.navbar_hamburger}
@@ -88,28 +80,13 @@ function Navbar() {
           >
             &times;
           </a>
-          <Link
-              to="ourprocess" smooth = {true} duration={500}
-            >
-              Our Process
-            </Link>  
 
-            <Link
-              to="aboutus" smooth = {true} duration={500}
-            >
-              About 
-            </Link>
-            <Link
-              to="track" smooth = {true} duration={500}
-            >
-             Track Your Delivery
-            </Link>
-           
-          <RegularButton
-            title="Get the app"
-            className={styles.sidebar_button}
-            url="#"
-          />
+          <a href="/">How it works</a>
+            <a href="/">Pricing</a>
+            <a href="/">About Us</a>
+            <a href="/">FAQs</a>
+            <a href="/">Contact Us</a>
+          
         </div>
       </div>
     </>

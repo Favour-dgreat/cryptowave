@@ -19,6 +19,7 @@ function NavbarDashboard() {
       setUserName(authContext.user.displayName || "Cara Liana Fuqua");
       setUserEmail(authContext.user.email || "caraliana.fuqua@gmail.com");
     }
+    console.log(authContext);
   }, [authContext]);
 
   const openNav = () => setIsNavOpen(true);
@@ -37,7 +38,7 @@ function NavbarDashboard() {
           </div>
 
           <div className={styles.user_info}>
-          <BellFill style={{color:'black', lineHeight: '120px', fontSize: '30px', cursor: 'pointer'}}></BellFill> 
+          <BellFill style={{color:'black', lineHeight: '120px', fontSize: '20px', cursor: 'pointer'}}></BellFill> 
           <div className={styles.user_info1}>
 
             <span className={styles.user_name}>{userName}</span>

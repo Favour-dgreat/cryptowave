@@ -5,22 +5,19 @@ import {
   signOut,
   onAuthStateChanged,
   updateProfile,
-  getAuth,
   GoogleAuthProvider,
   signInWithPopup,
   User
 } from 'firebase/auth';
-import { doc, getDoc, setDoc, getFirestore } from 'firebase/firestore';
-import { app } from '../firebase/firebase.config'; // Adjust the path based on your project structure
+import { doc, getDoc, setDoc, collection } from 'firebase/firestore';
+import {  auth, db } from '../firebase/firebase.config'; 
 
-const auth = getAuth(app);
-const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 
 interface AuthContextProps {
   user: User | null;
   loading: boolean;
-  register: (fullName: string, email: string, password: string) => Promise<void>;
+  registerUser: (data: { email: string; password: string; fullName: string; phoneNumber: string, username: string }) => Promise<void>;
   login: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
   authenticateWithGoogle: () => Promise<void>;
@@ -36,24 +33,29 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
-  const register = async (fullName: string, email: string, password: string) => {
+ 
+  const registerUser = async (data: { email: string; password: string; fullName: string; phoneNumber: string, username: string }) => {
     setLoading(true);
     try {
-      const res = await createUserWithEmailAndPassword(auth, email, password);
+      const res = await createUserWithEmailAndPassword(auth, data.email, data.password);
       const user = res.user;
       await updateProfile(user, {
-        displayName: fullName,
+        displayName: data.fullName,
       });
 
-      await setDoc(doc(db, 'users', user.uid), {
-        fullName,
-        email,
+      const docRef = doc(collection(db, "users"), user.uid);
+      console.log(docRef, user);
+    
+      await setDoc(docRef, {
+        email: user.email,
+        fullName: user.displayName,
         uid: user.uid,
-        role: 'user',
+        phoneNumber: user.phoneNumber,
+        
       });
 
       // Manually setting the user object with the fullName property
-      setUser({ ...user, displayName: fullName });
+      setUser({ ...user, displayName: data.fullName });
       setLoading(false);
     } catch (error: unknown) {
       setLoading(false);
@@ -70,16 +72,17 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setLoading(true);
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
-
-      // Fetching user document to get the full name
+      console.log(res)
       const userDoc = await getDoc(doc(db, 'users', res.user.uid));
+      console.log(userDoc)
       if (userDoc.exists()) {
         const userData = userDoc.data();
-        // Manually setting the user object with the fullName property
+        console.log(userData)
         setUser({ ...res.user, displayName: userData?.fullName });
       } else {
         setUser(res.user);
       }
+    
       setLoading(false);
     } catch (error: unknown) {
       setLoading(false);
@@ -172,7 +175,7 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, loading, register, login, logout, authenticateWithGoogle }}>
+    <AuthContext.Provider value={{ user, loading, registerUser, login, logout, authenticateWithGoogle }}>
       {children}
     </AuthContext.Provider>
   );

@@ -23,8 +23,8 @@ const Swags = () => {
 
               <div className={styles.btn_container}>
                 <RegularButton
-                  title="Trade Now"
-                  className={styles.regularButton}
+                  title="Trade Now" style={{textAlign: 'center'}}
+                  className={styles.regularButton} 
                   url="#"
                 />
              </div>
